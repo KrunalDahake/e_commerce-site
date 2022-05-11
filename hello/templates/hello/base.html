@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'hello/css/bootstrap.css' %} ">
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+ 
+    {% include 'hello/navbar.html'%}
+  
+    <div class="container">
+        {% block content %}
+        {% endblock content %}
+        {% block contact %}
+        {% endblock contact %}
+        {% block about %}
+        {% endblock about %}
+        {% block login %}
+        {% endblock login %}
+        {% block signup %}
+        {% endblock signup %}
+        {% block profile %}
+        {% endblock profile %}
+        {% block product %}
+        {% endblock product %}
+        {% block product2 %}
+        {% endblock product2 %}
+        {% block address %}
+        {% endblock address %}
+        {% block add_to_cart %}
+        {% endblock add_to_cart %}
+        {% block productdetail %}
+        {% endblock productdetail %}
+        {% block buynow %}
+        {% endblock buynow %}
+        {% block passwordchange %}
+        {% endblock passwordchange %}
+        {% block passwordchangedone %}
+        {% endblock passwordchangedone %}
+        {% block reset %}
+        {% endblock reset %}
+        {% block resetdone %}
+        {% endblock resetdone %}
+        {% block reset_confirm %} 
+        {% endblock reset_confirm %}
+        {% block reset_complete %} 
+        {% endblock reset_complete %}
+        {% block payment_gateway %} 
+        {% endblock payment_gateway %}
+    </div>
+    <script src="{% static 'hello/js/jquery.js' %}"></script>
+    <script src="{% static 'hello/js/popper.js' %}"></script>
+    <script src="{% static 'hello/js/bootstrap.js' %}"></script>
+</body>
+</html>}

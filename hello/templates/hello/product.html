@@ -1,0 +1,36 @@
+{% extends 'hello/base.html' %}
+{% load static %}
+
+{% block product %}
+<body>   
+    <main>  
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for vg in veg %}
+            <div class="col">
+              <div class="card shadow-sm">
+               <img src="{{vg.product_image.url}}" alt="">
+    
+                <div class="card-body">
+                  <span class="'fw-bold">{{vg.title}}</span>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <span class="fs-5">Rs. {{vg.selling_price}}/kg</span>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="{% url 'productdetail' vg.id %}"><button class="btn btn-sm btn-outline-secondary">Add</button></a>
+                    </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+    
+    </main>       
+      </body>
+{% endblock product %}
+  

@@ -1,0 +1,26 @@
+{% extends 'hello/base.html' %}
+{% load static %}
+
+{% block signup %}
+<div class="col-sm-6 mt-4">
+    <h3>Registrations Form</h3>
+    {% if messages %}
+        {% for msg in messages %}
+        <p {% if msg.tags %} class="alert alert-{{msg.tags}}" {% endif %}>{{msg}}</p>
+        {% endfor %}
+        {% endif %}
+    <form action="" method="post" novalidate class="shadow-sm p-5">
+        {% csrf_token %}
+        {% for fm in form %}
+        {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br><br>
+        {% endfor %}    
+    <input type="submit" value="Submit" class="btn btn-primary">
+    {% if form.non_field_errors %} 
+    {% for error in form.non_field_errors %}
+    <p class="alert alert-danger my-3">{{error}}</p>
+    {% endfor %}
+    {% endif %}
+    </form>
+    <a href="{% url 'login' %}">Login</a>
+</div>
+{% endblock signup %}
